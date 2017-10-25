@@ -106,7 +106,7 @@ if %errorlevel%==2 goto menu
 title О программе BatNote v0.4
 cls
 echo BatNote - консольный блокнот
-echo Офицальная ветка на гитхабе: https://github.com/alexsyw/batnote 
+echo Официальная ветка на гитхабе: https://github.com/alexsyw/batnote 
 echo Удачи ;)
 pause > NUL
 goto write
