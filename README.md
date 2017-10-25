@@ -5,4 +5,4 @@ BatNote - консольный блокнот для Windows.
 
 **Download**: [ https://github.com/gfx3336007/batnote_en]( https://github.com/gfx3336007/batnote_en " https://github.com/gfx3336007/batnote_en")
 
-Сделанно при поддержке #ITD.
+Сделано при поддержке #ITD.
