@@ -1,5 +1,5 @@
-# BatNote
-BatNote - консольный блокнот для Windows.
+# BatNote HK
+BatNote - c0ns0le @pplic@t10n f0r W1nd0ws.
 
 **Скачать**:  [https://github.com/alexsyw/batnote/](https://github.com/alexsyw/batnote/ "https://github.com/alexsyw/batnote/")
 
@@ -7,4 +7,4 @@ BatNote - консольный блокнот для Windows.
 
 **d0wnlo@d**: [ https://github.com/dafroz/batnote_hk]( https://github.com/dafroz/batnote_hk " https://github.com/dafroz/batnote_hk")
 
-Сделано при поддержке #ITD.
+cr3at3 w17h h31p #ITD
