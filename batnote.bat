@@ -5,13 +5,14 @@
 :: Смена кодировки и заголовка
 
 chcp 866
-title BatNote
+title BatNote HK
+color 0A
 cls
 
 :: Выбор цвета и приветствие
 
 cls
-echo Вводите текст, но без новых строк! Нажмите Space, чтобы продолжить.
+echo typ3 t3xt, n0 n3w r0ws. pr3ss sp@c3.
 pause > NUL
 
 :: Ввод названия файла и перенос его в заголовок
@@ -19,21 +20,20 @@ pause > NUL
 :name
 cls
 title BatNote
-echo Сначала вам надо придумать название файла! Далее нажмите Enter!
+echo typ3 @ f1l3 n@m3
 set /p name=">"
 cls
 
-title %name% - BatNote
+title %name% - BatNote HK
 
 if %name%==egor21312 goto easter1
-if %name%==Infinite96 goto easter2
+if %name%==dafroz goto easter2
 
 :: Появление процесса написания текста
 
 :write
 title %name% - BatNote
 cls
-echo Чтобы записать файл, нажмите Enter! Для открытия меню пишите "menu"!
 set /p text=">"
 if %text%==menu goto menu
 if %text%==cls goto cls
@@ -49,20 +49,20 @@ goto save
 :: Сохранение файла
 :save
 echo %Text% > %name%.txt
-echo Ваша запись сохранена! Нажмите Space для выхода! P.S. Ваша запись сохранена в кодировке OEM866!
+echo y0ur t3x7 h@s b33n s@v3d
 pause > NUL
 exit
 
 :: Команда menu
 
 :menu
-title Меню - BatNote
+title m3nu - BatNote
 cls
-echo 1. Файл
-echo 2. Вид
-echo 3. О программе
-echo 4. О командах
-echo 5. Назад
+echo 1. f1l3
+echo 2. v13w
+echo 3. @b0u7
+echo 4. c0mm@nds
+echo 5. b@ck
 choice /C 123450 > NUL
 if %errorlevel%==1 goto file
 if %errorlevel%==2 goto view
@@ -74,14 +74,14 @@ if %errorlevel%==6 goto dog
 :: Меню "Файл"
 
 :file
-title Файл - BatNote
+title f1l3 - BatNote
 cls
-echo 1. Открыть
-echo 2. Сохранить как...
+echo 1. 0p3n
+echo 2. s@v3 @s...
 echo ----------------
-echo 3. Выход
+echo 3. 3x17
 echo ----------------
-echo 4. Назад
+echo 4. b@ck
 choice /C 1234 > NUL
 if %errorlevel%==1 goto noteview
 if %errorlevel%==2 goto saveas
@@ -91,11 +91,11 @@ if %errorlevel%==4 goto menu
 :: Меню "Вид"
 
 :view
-title Вид - BatNote
+title v13w - BatNote
 cls
-echo 1. Сменить тему
+echo 1. ch01c3 th3m3
 echo ----------------
-echo 2. Назад
+echo 2. b@ck
 choice /C 12 > NUL
 if %errorlevel%==1 goto themeselector
 if %errorlevel%==2 goto menu
@@ -103,11 +103,11 @@ if %errorlevel%==2 goto menu
 :: О программе
 
 :about
-title О программе BatNote v0.4
+title @b0u7 BatNote HK v0.4
 cls
-echo BatNote - консольный блокнот
-echo Официальная ветка на гитхабе: https://github.com/alexsyw/batnote 
-echo Удачи ;)
+echo BatNote HK - h@ck3r c0ns013.
+echo 0f1c1@1 g1thub br@nch: https://github.com/dafroz/batnote_hk 
+echo g37 1ucky ;)
 pause > NUL
 goto write
 
@@ -143,8 +143,8 @@ goto name
 :: Пасхалочка! Дубль 2
 :easter2
 cls
-title Infinite96
-echo "I'm gonna get to rhythm by. (C) Infinite96"
+title dafroz
+echo "froz da froz (C) dafroz"
 pause > NUL
 goto name
 
@@ -155,28 +155,26 @@ goto name
 
 :saveas
 cls
-title Сохранить как... - BatNote
-echo "Введите путь для сохранения файла. Надо писать так: C:\Textdir\"
+title s@v3 @s... - BatNote
 set /p dir=">"
 goto writeto
 
 :writeto
-title %name% - Сохранить как... - BatNote
+title %name% - s@v3 @s... - BatNote
 cls
-echo Чтобы записать файл, нажмите Enter! Для открытия меню пишите "menu"!
 set /p text=">"
 goto savingas
 
 :savingas
 echo %Text% > %dir%%name%.txt
-echo Ваша запись сохранена! Нажмите Space для выхода! P.S. Ваша запись сохранена в кодировке OEM866!
+echo s@v3d
 pause > NUL
 exit
 
 :themeselector
 cls
-choice /M "Вы хотите включить темную тему?"
-if %errorlevel%==1 color 7
+choice /M "0n bl@ck th3m3?"
+if %errorlevel%==1 color 0A
 if %errorlevel%==2 color F0
 cls
 goto write
@@ -214,32 +212,27 @@ goto clswrite
 :noteview
 title BatNote View v0.4
 cls
-echo Введите путь до текстового файла.
-echo Оно показывает текст в формате BatNote!
-echo (если он в этой папке, то надо ввести только его название и расширение):
-set /p viewdir=
+set /p viewdir=">"
 if %viewdir%==edit goto write
 cls
 type %viewdir%
 title %viewdir% - BatNote View v0.4
 echo .
-echo Для перехода в BatNote нажмите Space!
+echo f0r sw1tch b@ck pr3ss sp@c3
 PAUSE > NUL
 goto write
 
 :comhelp
-title Команды - BatNote
+title c0mm@nds - BatNote
 cls
-echo Итак, в BatNote всего 9 команд
-echo 1 - menu. Тут все ясно.
-echo 2 - cls. Она убирает весь текст с экрана.
-echo 3 - dir. Она показывает файлы в папке с программой.
-echo 4 и 5 - time и date. Показывают время и дату, соответственно.
-echo 6 - секретная команда =D
-echo 7 - saveas - Сохранить как...
-echo 8 - themeselector - Выбор оформления.
-echo 9 - view - открывает BatNote View. Перейти из BN View в BN можно командой edit.
-echo На этом все. Веселитесь!
-echo Нажмите Space для выхода
+echo 9 c0mm@nds
+echo 1 - menu.
+echo 2 - cls.
+echo 3 - dir.
+echo 4 и 5 - time и date. 
+echo 6 - s3cr37
+echo 7 - saveas
+echo 8 - themeselector
+echo 9 - view
 pause > NUL
 goto write
